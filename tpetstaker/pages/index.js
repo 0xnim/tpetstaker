@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import stakingContract from '../blockchain/staking'
 import Web3 from 'web3'
-import {useState, useEffect} from 'react'
+import { useState, useEffect } from 'react'
 import styles from '../styles/staking.module.css'
 
 const staking = () => {
