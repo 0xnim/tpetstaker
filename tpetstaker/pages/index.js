@@ -7,15 +7,15 @@ import styles from '../styles/staking.module.css'
 const staking = () => {
   const [totalstaked, setTotalstaked] = useState('')
  
-  //loading users network ID and name
-  const networkId = await web3.eth.net.getId();
-  const networkType = await web3.eth.net.getNetworkType();
-  setNetwork({ ...network, id: networkId, name: networkType });
-
   //connecting to metamask
   let web3 = window.web3;
   const accounts = await web3.eth.getAccounts();
   setAccount(accounts[0]);
+  
+  //loading users network ID and name
+  const networkId = await web3.eth.net.getId();
+  const networkType = await web3.eth.net.getNetworkType();
+  setNetwork({ ...network, id: networkId, name: networkType });
 
   useEffect(() => {
    totalstakedHandler()
